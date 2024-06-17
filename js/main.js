@@ -1,13 +1,13 @@
 // Visualizzare in pagina 5 numeri casuali.
-let randomNumber = randomNumberGenerationRange (1, 99, 5);
+let randomNumbers = randomNumberGenerationRange (1, 99, 5);
 let messageNumber = document.querySelector("h1");
-messageNumber.innerHTML = randomNumber;
-console.log(randomNumber);
+messageNumber.innerHTML = randomNumbers;
+console.log(randomNumbers);
 
 // Dichiara la variabile che gestisce i secondi
 let secondCount = 0;
 
-// Prendi L'elemeto da HTML
+// Prendi L'elemento da HTML
 let secondTimer = document.getElementById("second");
 
 // Da lì parte un timer di 30 secondi.
@@ -21,18 +21,24 @@ setTimeout(function(){
     messageNumber.classList.add("remove");
     secondTimer.classList.add("remove");
     clearInterval(timer);
-}, 1000 * 3);
+}, 1000 * 30);
 
 
+const listNumberUser = [];
 setTimeout(function(){
     // e l’utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
-    for (let i = 0; i < randomNumber.length; i++){
-        let numberUser = parseInt(prompt("Inserisci uno alla volta i numeri che hai visto"));
+    for (let i = 0; i < randomNumbers.length; i++){
+        numberUser = parseInt(prompt("Inserisci uno alla volta i numeri che hai visto"));
+        
+        if (randomNumbers.includes(numberUser)) {
+            // Se il numero è incluso, aggiungilo all'array correctNumbers
+            listNumberUser.push(randomNumbers[i]);
+        }
     }
-}, 1000 * 4);
+
+    const resultMessage = document.getElementById('result');
+    resultMessage.innerHTML = `Hai indovinato ${listNumberUser.length} numeri: ${listNumberUser}`;
+}, 1000 * 31);
 
 
 
-
-
-// Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
