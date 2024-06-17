@@ -1,6 +1,6 @@
 // Visualizzare in pagina 5 numeri casuali.
 let randomNumbers = randomNumberGenerationRange (1, 99, 5);
-const messageNumber = document.querySelector("h1");
+let messageNumber = document.querySelector("h1");
 messageNumber.innerHTML = randomNumbers;
 console.log(randomNumbers);
 
@@ -8,7 +8,7 @@ console.log(randomNumbers);
 let secondCount = 0;
 
 // Prendi L'elemento da HTML
-const secondTimer = document.getElementById("second");
+let secondTimer = document.getElementById("second");
 
 // Da lì parte un timer di 30 secondi.
 let timer = setInterval(function(){
