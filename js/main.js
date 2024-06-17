@@ -12,7 +12,7 @@ let secondTimer = document.getElementById("second");
 
 // Da lì parte un timer di 30 secondi.
 let timer = setInterval(function(){
-    secondCount++
+    secondCount++;
     secondTimer.innerHTML = secondCount;
 }, 1000);
 
@@ -21,8 +21,18 @@ setTimeout(function(){
     messageNumber.classList.add("remove");
     secondTimer.classList.add("remove");
     clearInterval(timer);
-}, 30000);
+}, 1000 * 3);
 
-// e l’utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
+
+setTimeout(function(){
+    // e l’utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
+    for (let i = 0; i < randomNumber.length; i++){
+        let numberUser = parseInt(prompt("Inserisci uno alla volta i numeri che hai visto"));
+    }
+}, 1000 * 4);
+
+
+
+
 
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
